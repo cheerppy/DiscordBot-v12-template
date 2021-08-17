@@ -1,0 +1,17 @@
+{
+    "name": "template",
+    "version": "1.0.0",
+    "description": "discord bot template for cheerppy",
+    "main": "server.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "dependencies": {
+        "discord.js-12": "^1.0.2",
+        "sqlite3": "^5.0.2",
+        "dotenv": "^10.0.0",
+        "forever": "^4.0.1",
+        "twitter": "^1.7.1"
+    },
+    "license": "MIT"
+  }
