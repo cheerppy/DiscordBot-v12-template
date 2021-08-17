@@ -11,11 +11,17 @@ const client = new discord.Client({allowedMentions: {repliedUser: true}});
 const config = require('./config.json');
 const sqlite = require("sqlite3").verbose();
 const db = new sqlite.Database(config.db);
-const twitter = require("twitter")
-const Twitter = new twitter(config.twitter);
+const twitter = require("twitter");
 require("./inlineReply");
 require("dotenv").config();
 
+const twitterTokens = {
+  "consumer_key":process.env.consumer_key,
+  "consumer_secret":process.env.consumer_secret,
+  "access_token_key":process.env.access_token_key,
+  "access_token_secret":process.env.access_token_secret
+}
+const Twitter = new twitter(twitterTokens);
 
 const reTime = new RegExp(/^([0-9]|[01][0-9]|2[0-8]):[0-5][0-9]$/);
 const reTimeEx = /^([01][0-9]|2[0-8])[0-5][0-9]$/;
