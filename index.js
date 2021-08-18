@@ -132,4 +132,8 @@ function strJst(jst){
 
 function sort(arr){
   return Array.from(new Set(arr.sort((a,b)=> {return a-b})));
-};
+}
+
+function dice(max) {
+  return Math.floor(Math.random() * max) + 1;
+}
