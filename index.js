@@ -3,6 +3,8 @@ const botName = "template";
 const test = true;
 const valid = true;
 
+const consolelog = console.log;console.log = (...a) => consolelog(strJst(getJst()), ...a);const consoleerror = console.error;console.error = (...a) => consoleerror(strJst(getJst()), ...a);
+
 
 const http = require('http');
 const querystring = require('querystring');
