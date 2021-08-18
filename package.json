@@ -13,5 +13,6 @@
         "forever": "^4.0.1",
         "twitter": "^1.7.1"
     },
+    "author": "cheerppy",
     "license": "MIT"
   }
