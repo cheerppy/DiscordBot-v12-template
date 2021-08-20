@@ -127,7 +127,7 @@ function getJst(){
 }
 
 function strJst(jst){
-  return jst.getFullYear() + "/" + (jst.getMonth() + 1) + "/" + jst.getDate() + " " + jst.getHours() + ":" + jst.getMinutes() + ":" + jst.getSeconds() + ""
+  return jst.getFullYear() + "/" + (jst.getMonth() + 1) + "/" + jst.getDate() + " " + jst.getHours() + ":" + ("0" + jst.getMinutes()).slice(-2) + ":" + ("0" + jst.getSeconds()).slice(-2) + ""
 }
 
 function sort(arr){
