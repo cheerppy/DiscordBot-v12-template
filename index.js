@@ -8,7 +8,7 @@ const discord = require('discord.js-12');
 const client = new discord.Client({allowedMentions: {repliedUser: true}});
 require("./inlineReply");
 const {
-  reTime, reTimeEx, filter, option, sendReply, getCh, sendMsg, embMsg,
+  reTime, reTimeEx, filter, option, sendReply, sendMsg, embMsg,
   promMsg, wait, collect, getJst, strJst, sort, dice 
 } = require("./module");
 
@@ -83,4 +83,8 @@ process.exit(0);
 }
 
 if(valid){client.login( process.env.DISCORD_BOT_TOKEN );}else{console.log("invalid")}
+
+function getCh(channelId){
+  return client.channels.cache.get(channelId);
+}
 
