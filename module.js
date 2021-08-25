@@ -18,13 +18,9 @@ function sendReply(message, text){
   return m;
 }
 
-function getCh(channelId){
-  return client.channels.cache.get(channelId);
-}
-
-function sendMsg(channel, text, option={}){
- const m = channel.send(text, option)
-   .then(console.log("メッセージ送信: " + text + JSON.stringify(option)))
+function sendMsg(channel, text){
+ const m = channel.send(text)
+   .then(console.log("メッセージ送信: " + text))
    .catch(console.error);
   return m
 }
@@ -42,9 +38,9 @@ function embMsg(ch, title, text,...fields){
   return m;
 }
 
-function promMsg(ch, text, opt = {}){
+function promMsg(ch, text){
   return new Promise(res=>{
-   const m = sendMsg(ch, text, opt);
+   const m = sendMsg(ch, text);
     return res(m);
   });
 }
@@ -77,6 +73,6 @@ function dice(max) {
 }
 
 module.exports = {
-  reTime, reTimeEx, filter, option, sendReply, getCh, sendMsg, embMsg,
+  reTime, reTimeEx, filter, option, sendReply, sendMsg, embMsg,
   promMsg, wait, collect, getJst, strJst, sort, dice 
 }
