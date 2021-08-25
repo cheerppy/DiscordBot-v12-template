@@ -67,10 +67,10 @@ client.on('message', message =>{
   const here = message.channel;
   const ch = getCh(mainId);
   
-  if(com === test){
+  if(com === "test"){
     sendMsg(ch, "test");
   }
-  if(com === get){
+  if(com === "get"){
     sendMsg(here, here.id)
   }
   
