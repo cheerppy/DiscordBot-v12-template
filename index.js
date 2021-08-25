@@ -14,7 +14,7 @@ const {
 
 const consolelog = console.log;console.log = (...a) => consolelog(strJst(getJst()), ...a);const consoleerror = console.error;console.error = (...a) => consoleerror(strJst(getJst()), ...a);
 
-const http = require('http');
+const http = require('http'); const https = require("https");
 const querystring = require('querystring');
 const config = require('./config.json');
 const sqlite = require("sqlite3").verbose();
