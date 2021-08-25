@@ -31,6 +31,7 @@ const twitterTokens = {
 const Twitter = new twitter(twitterTokens);
 
 const pref = config.prefix;
+const mainId = config.testId;
 
 http.createServer(function(req, res){if (req.method == 'POST'){var data = "";req.on('data', function(chunk){data += chunk;});req.on('end', function(){if(!data){console.log("No post data");res.end();return;}var dataObject = querystring.parse(data);console.log("post:" + dataObject.type);res.end();});}else if (req.method == 'GET'){res.writeHead(200, {'Content-Type': 'text/plain'});res.end(botName + ' is active now\ntest is ' + test + "\nvalidity is " + valid);}}).listen(3000);
 
@@ -64,6 +65,15 @@ client.on('message', message =>{
   if (message.author.id == client.user.id || message.author.bot) return;
   const [com, ...args] = message.content.slice(pref.length).split(' ');
   const here = message.channel;
+  const ch = getCh(mainId);
+  
+  if(com === test){
+    sendMsg(ch, "test");
+  }
+  if(com === get){
+    sendMsg(here, here.id)
+  }
+  
   
 })
 
