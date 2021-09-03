@@ -50,11 +50,11 @@ client.on('ready', message =>{
 client.on('message', message =>{
  if (message.author.id == client.user.id){return;}
  if (message.author.bot)return;
- if (message.mentions.has(client.user)){
-   sendReply(message, "呼びましたか？");
-   return;
- }
- if (message.content.match(/にゃ～ん|にゃーん|nya/)){
+ if (!message.mentions.has(message.guild.defaultRole) && message.mentions.has(client.user)){
+  sendReply(message, "なぁに？");
+  return;
+}
+ if (message.content.match(/nya/)){
    let text = "にゃ～ん";
    sendMsg(message.channel, text);
    return;
