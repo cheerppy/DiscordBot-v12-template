@@ -18,6 +18,8 @@ const consolelog = console.log;console.log = (...a) => consolelog(strJst(getJst(
 const http = require('http'); const https = require("https");
 const querystring = require('querystring');
 const config = require('./config.json');
+const share = require("../../src/twitter.json").share;
+const guilds = require("../../src/guilds.json").guilds;
 const sqlite = require("sqlite3").verbose();
 const db = new sqlite.Database(config.db);
 const twitter = require("twitter");
