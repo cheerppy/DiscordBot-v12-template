@@ -81,12 +81,13 @@ client.on('message', message =>{
   
 })
 
-if(process.env.DISCORD_BOT_TOKEN == undefined){
-console.log('DISCORD_BOT_TOKENが設定されていません。');
+const DISCORD_BOT_TOKEN = process.env.DISCORD_BOT_TOKEN
+if(DISCORD_BOT_TOKEN == undefined){
+console.log('が設定されていません。');
 process.exit(0);
 }
 
-if(valid){client.login( process.env.DISCORD_BOT_TOKEN );}else{console.log("invalid");}
+if(valid){client.login( DISCORD_BOT_TOKEN );}else{console.log("invalid");}
 
 function getCh(channelId){
   return client.channels.cache.get(channelId);
